@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+</head>
+<body>
+  <h1>User List</h1>
+  <ul>
+    <% users.forEach(user => { %>
+      <li><%= user.username %> - <%= user.email %></li>
+    <% }) %>
+  </ul>
+
+  <h2>Add New User</h2>
+  <form action="/api/users" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" name="username" required>
+    <label for="email">Email:</label>
+    <input type="email" name="email" required>
+    <button type="submit">Add User</button>
+  </form>
+</body>
+</html>
+
